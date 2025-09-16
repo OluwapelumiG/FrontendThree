@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="nameInput" placeholder="Name" />
+    <input type="email" id="emailInput" placeholder="Email Address" />
+    <input type="tel" id="phoneInput" placeholder="Phone Number" />
+    <button onclick="displayOutput()">Submit</button>
+
+
+    <div>
+        <p id="nameOutput">Name:</p>
+        <p id="emailOutput">Email:</p>
+        <p id="phoneOutput">Phone Number</p>
+    </div>
+    
+    <script>
+
+        function getId(id){
+            return document.getElementById(id);
+        }
+        function getValue(elementId){
+            return getId(elementId).value;
+        }
+
+        function showOutput(tagId, text){
+            getId(tagId).innerHTML = text;
+        }
+
+        function displayOutput(){
+            let name = getValue('nameInput');
+            let email = getValue('emailInput');
+            let phone = getValue('phoneInput');
+
+
+            showOutput("nameOutput", "Name: " + name);
+            showOutput("emailOutput", "Email: " + email);
+            showOutput("phoneOutput", "Phone: " + phone);
+        }
+
+
+        let x = 2;
+
+
+
+        function output(){
+            let name = document.getElementById('nameInput').value;
+            
+        }
+
+    </script>
+
+
+</body>
+</html>

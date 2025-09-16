@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+    <input type="number" id="first_number" placeholder="First Number"  />
+    <input type="number" id="second_number" placeholder="Second Number"
+        onchange="calculate()"/>
+
+    <button type="submit" onclick="add(300, 90)">Submit</button>
+
+    <p id="answer"></p>
+
+    <script>
+        function calculate(){
+            let first = document.getElementById('first_number').value;
+            let second = document.getElementById('second_number').value;
+
+            add(first, second);
+            
+        }
+
+
+        function add(first_num, second_num){
+            document.getElementById('answer').innerHTML = 
+                    Number(first_num) + Number(second_num);
+        }
+    </script>
+
+
+    
+</body>
+</html>

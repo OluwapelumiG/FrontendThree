@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+
+    <div id="cars">
+    </div>
+
+    <script>
+        
+        const students = ["James", "Daniel", "Olayinka", "Josephine", "Patrick", "Ayo", "Khalid"];
+
+        for(let counter = 0; counter <= students.length; counter++){
+            // alert("Count"+counter);
+
+
+            const divs = document.createElement("h1");  // <p></p>
+            divs.textContent = students[counter]; // adding Hello => <p></p> => <p>Hello</p>
+
+            const carsDiv = document.getElementById('cars');
+            carsDiv.appendChild(divs);
+            
+        }
+
+        let a = 4;
+        do{
+            console.log("While counter: ", a);
+
+            a++;
+        } while(a >= 15)
+
+    </script>
+    
+</body>
+</html>

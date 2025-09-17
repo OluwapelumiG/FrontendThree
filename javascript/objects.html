@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <div>
+        <p id="name"></p>
+        <p id="course"></p>
+        <p id="address"></p>
+        <p id="phone"></p>
+    </div>
+
+
+    <button onclick="this.innerHTML = Date()">The time is?</button>
+
+    <button onmouseover="runthis(event)">Run</button>
+
+
+
+    <script>
+        // alert(Date());
+        const student = new Object({
+            title: "Mr",
+            firstName: "Segun",
+            lastName: "James",
+            course: "Frontend",
+            address: "Ilofa Road",
+            age: 45,
+            response: "Mr Segun said \"Yes\" to the contract",
+            phone: 234807654321,
+            isQualified: function() {
+                if(this.age >= 18){
+                    return "Yes";
+                }
+                else{
+                    return "No";
+                }
+            },
+            fullName: function() {
+                return this.title + ' ' + this.firstName + ' ' + this.lastName;
+            }
+        })
+
+        console.log(student);
+
+        document.getElementById("name").innerHTML =student.fullName();
+        document.getElementById("course").innerHTML =student['response'];
+
+
+        function runthis(){
+            alert("Mouse over");
+        }
+
+    </script>
+    
+</body>
+</html>

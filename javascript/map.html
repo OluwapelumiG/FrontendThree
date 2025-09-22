@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Map</title>
+</head>
+<body>
+
+    <div id="studentsList">
+    </div>
+
+    <script>
+        
+        const students = [
+            {
+                name: "James",
+                age: 20
+            },
+            {
+                name: "Daniel",
+                age: 25
+            },
+            {
+                name: "Olayinka",
+                age: 30
+            },
+            {
+                name: "Josephine",
+                age: 22
+            },
+            {
+                name: "Patrick",
+                age: 28
+            },
+            {
+                name: "Ayo",
+                age: 24
+            },
+            {
+                name: "Khalid",
+                age: 27
+            }
+        ];
+
+        students.map((student) => {
+            const name = document.createElement("h1");  // <p></p>
+            name.textContent = student.name; // adding Hello => <p></p> => <p>Hello</p>
+
+            const age = document.createElement("h2");
+            age.textContent = student.age;
+
+            const studentsDiv = document.getElementById('studentsList');
+            studentsDiv.appendChild(name);
+            studentsDiv.appendChild(age);
+        });
+
+    </script>
+    
+</body>
+</html>

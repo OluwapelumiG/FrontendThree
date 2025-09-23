@@ -9,16 +9,65 @@
 </head>
 <body>
 
-    <section class="flex justify-between px-10 py-4 bg-gray-200 items-center shadow-lg">
-        <h1 class="text-2xl text-blue-500"><span class="text-gray-800 text-4xl">W</span>ebsite</h1>
-        <nav class="space-x-4">
-            <a class="text-blue-500 hover:underline hover:text-blue-700" href="#">Home</a>
+    <section class="flex justify-between px-10 md:px-20 py-4 md:py-10 bg-gray-200 lg:bg-green-300 items-center shadow-lg">
+        <h1 class="text-2xl text-blue-500"><span class="text-gray-800 text-2xl">W</span>ebsite</h1>
+        <nav class="hidden md:flex space-x-4">
+            <a class="text-blue-500 hover:underline hover:text-blue-700" href="./tailwindcss.html">Home</a>
             <a class="text-blue-500 hover:underline hover:text-[#ff0000]" href="#">About</a>
             <a class="text-blue-500 hover:underline hover:text-blue-700" href="#">Contact</a>
             <a class="text-blue-500 hover:underline hover:text-blue-700" href="#">Blog</a>
         </nav>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Signup</button>
+        <button class="hidden md:flex bg-blue-500 text-white px-4 py-2 rounded-md">Signup</button>
+        <button class="flex md:hidden " id="showBtn" onclick="showMobileNav()">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>hamburger</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-212.000000, -888.000000)" fill="#000000"> <path d="M230,904 L214,904 C212.896,904 212,904.896 212,906 C212,907.104 212.896,908 214,908 L230,908 C231.104,908 232,907.104 232,906 C232,904.896 231.104,904 230,904 L230,904 Z M230,896 L214,896 C212.896,896 212,896.896 212,898 C212,899.104 212.896,900 214,900 L230,900 C231.104,900 232,899.104 232,898 C232,896.896 231.104,896 230,896 L230,896 Z M214,892 L230,892 C231.104,892 232,891.104 232,890 C232,888.896 231.104,888 230,888 L214,888 C212.896,888 212,888.896 212,890 C212,891.104 212.896,892 214,892 L214,892 Z" id="hamburger" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+        </button>
+
+        <button class="hidden md:hidden " id="hideBtn" onclick="hideMobileNav()">
+            <svg class=" w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+        </button>
+
+        <nav id="mobile-nav" class="absolute hidden md:hidden top-20 right-4 bg-gray-500 px-2 py-2 w-[50%] flex flex-col space-y-4">
+            <a class="bg-white px-10 py-2 text-blue-500 hover:underline hover:text-blue-700" href="./tailwindcss.html">Home</a>
+            <a class="bg-white px-10 py-2 text-blue-500 hover:underline hover:text-blue-700" href="#">About</a>
+            <a class="bg-white px-10 py-2 text-blue-500 hover:underline hover:text-blue-700" href="#">Contact</a>
+            <a class="bg-white px-10 py-2 text-blue-500 hover:underline hover:text-blue-700" href="#">Blog</a>
+        </nav>
     </section>
+    
+
+    <section class="min-h-[60vh] bg-gradient-to-b from-green-800 via-gray-400 to-yellow-300 text-center content-center">
+        <div class="space-y-10">
+            <h1 class="text-7xl text-white">Welcome</h1>
+            <h3 class="text-5xl">To our Website</h3>
+            <button class="bg-blue-500 hover:bg-blue-400 px-4 py-3 rounded-md">Get Started</button>
+        </div>
+        
+    </section>
+
+    <script>
+
+        function showMobileNav(){
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.remove('hidden');
+
+            const showBtn = document.getElementById('showBtn');
+            showBtn.classList.add('hidden');
+
+            const hideBtn = document.getElementById('hideBtn');
+            hideBtn.classList.remove('hidden');
+        }
+
+        function hideMobileNav(){
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.add('hidden');
+
+            const showBtn = document.getElementById('showBtn');
+            showBtn.classList.remove('hidden');
+
+            const hideBtn = document.getElementById('hideBtn');
+            hideBtn.classList.add('hidden');
+        }
+    </script>
     
 </body>
 </html>

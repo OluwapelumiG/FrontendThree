@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+
+    <div id="display">Hello: </div>
+    <button onclick="runGreeting()">Greet</button>
+
+    <div id="interval"></div>
+    <button onclick="startInterval()">Start interval</button>
+
+    <script>
+
+        function startInterval(){
+            let count = 0;
+            const timer = setInterval(() => {
+                count++;
+                document.getElementById("interval").innerHTML = count;
+
+                if(count >= 20){
+                    clearInterval(timer);
+                    count = 0;
+                }
+            }, 1000);
+            
+        }
+
+
+
+
+
+
+
+
+        function myDisplayer(text){
+            console.log(text);
+        }
+
+        function sayHello() {
+            myDisplayer("Hello");
+            document.getElementById('display').innerHTML += "Hello ";
+        }
+
+        function sayGoodbye() {
+            myDisplayer("Goodbye");
+            document.getElementById('display').innerHTML += "Goodbye ";
+        }
+
+        // First process
+        // sayGoodbye();
+        // sayHello();
+
+
+
+        // Second Process
+        // setTimeout(sayGoodbye, 2000);
+        // sayHello();
+        
+        function runGreeting() {
+            // Promise
+            let greetings = new Promise(
+                (success, failure) => {
+                    setTimeout(
+                        () => {
+                            sayGoodbye();
+                            success();
+                        },
+                        2000
+                    );
+                }
+            );
+
+            greetings.then(
+                () => {
+                    sayHello();
+                }
+            );
+
+            // concatenation
+        }
+
+        
+    </script>
+    
+</body>
+</html>

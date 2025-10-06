@@ -31,7 +31,7 @@ function App() {
       </div>
 
       <div>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} className='border-1 border-black w-full rounded-md' ></textarea>
+        <textarea value={message} onChange={(e) => setMessage(e.target.value+" testing")} className='border-1 border-black w-full rounded-md' ></textarea>
         <button onClick={addMessage} className='bg-blue-300 rounded-md px-4 py-2'>Add</button>
       </div>
     </div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="hidden" id="form-outline">
+        <form class="bg-gray-100 rounded-sm m-4 shadow-md">
+            <h3 class="text-4xl p-4">New User</h3>
+            <div class="flex flex-col p-4 space-y-2">
+                <label class="text-xl" for="name">Name</label>
+                <input class="border-1 border-gray-800 rounded-sm px-2 py-1 text-xl" type="text" name="name" id="name" placeholder="Enter User's name">
+            </div>
+            <div class="flex flex-col p-4 space-y-2">
+                <label class="text-xl" for="name">Email</label>
+                <input class="border-1 border-gray-800 rounded-sm px-2 py-1 text-xl" type="email" name="email" id="email" placeholder="Enter User's email">
+            </div>
+            <div>
+                <button onclick="submitForm()" class=" rounded-sm px-2 py-1 bg-green-400 m-4 text-xl">Submit</button>
+                <button onclick="showTable()" class=" rounded-sm px-2 py-1 bg-gray-400 text-white m-4 text-xl">Close</button>
+            </div>
+        </form>
+    </div>
+    <div id="table-outline" class=" bg-gray-100 p-4 rounded-sm m-4">
+        <div class="flex flex-row justify-between m-2">
+            <h2 class="text-2xl">Users</h2>
+            <button onclick="showForm()" class="bg-green-400 px-2 py-1 text-xl rounded-sm">+ Add New User</button>
+        </div>
+        <table class="w-full mt-2">
+            <thead class="bg-white p-2 w-full text-xl">
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th></th>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+    const tableOutline = document.getElementById("table-outline");
+    const formOutline = document.getElementById('form-outline');
+    const tableBody = document.getElementById('table-body');
+
+    function showForm(){
+        tableOutline.classList.add('hidden');
+        formOutline.classList.remove('hidden');
+    }
+
+    function showTable(){
+        tableOutline.classList.remove('hidden');
+        formOutline.classList.add('hidden');
+    }
+
+
+    function submitForm(){
+        event.preventDefault();
+
+        let nameInput = document.getElementById('name');
+        let emailInput = document.getElementById('email');
+
+        let newRow = document.createElement('tr');
+
+        newRow.innerHTML += "<td>#</td>";
+        newRow.innerHTML += "<td>"+ nameInput.value +"</td>";
+        newRow.innerHTML += "<td>"+ emailInput.value +"</td>";
+
+        tableBody.appendChild(newRow);
+
+        nameInput.value = "";
+        emailInput.value = "";
+        
+
+        showTable();
+        
+    }
+
+</script>
+</html>

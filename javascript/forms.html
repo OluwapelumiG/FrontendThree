@@ -66,20 +66,15 @@
         let emailInput = document.getElementById('email');
 
         let newRow = document.createElement('tr');
-
         newRow.innerHTML += "<td>#</td>";
         newRow.innerHTML += "<td>"+ nameInput.value +"</td>";
         newRow.innerHTML += "<td>"+ emailInput.value +"</td>";
-
         tableBody.appendChild(newRow);
 
         nameInput.value = "";
         emailInput.value = "";
         
-
-        showTable();
-        
+        showTable();   
     }
-
 </script>
 </html>

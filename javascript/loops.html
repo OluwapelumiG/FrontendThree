@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="list">
+        
+    </div>
+
+
+    <script>
+        // for(let i = 1; i <= 11; i+=2){
+        //     console.log("I = ", i);
+        // }
+
+        // let w = 13;
+        // while(w <= 11){
+        //     console.log("W = ", w);
+        //     w+=5;
+        // }
+
+
+        // let dw = 13;
+        // do {
+        //     console.log("DW = ", dw);
+        //     dw+=5;
+        // } while(dw <= 11)
+
+
+
+        const listElement = document.getElementById("list");
+
+        // const members = [
+        //     "Peter", "Mariam", "Blessed", "James", "John", "Angel", "Sulayman", "Zaid"
+        // ];
+
+        // for(let i = 0; i < members.length; i++){
+        //     if((members[i] != "James") && (members[i] != "John")){
+        //         let memberItem = document.createElement('li');
+
+        //         let memberDisplay = "Name: ";
+        //         memberDisplay += members[i];
+
+        //         memberItem.innerText = memberDisplay;
+
+        //         listElement.appendChild(memberItem);
+        //         console.log(memberDisplay);
+        //     }
+        // }
+
+
+        const membersDir = [
+            {
+                name: "tes",
+                address: "afsdfa",
+                email: "asfdasdfa",
+                phone: "adsfasdfas"
+            },
+            {
+                name: "asdfasdfasdfasdf", 
+                address: "adsfadadsfa",
+                email: "sdsdfgbsvxcvzdf",
+                phone: "asdafdsfasdf"
+            }
+        ]
+
+        for(let i = 0; i < membersDir.length; i++){
+                let memberItem = document.createElement('ul');
+
+                let memberDisplay = "<li>Serial N0: " + i + "</li>";
+                memberDisplay += "<li> Name: " + membersDir[i]['name'] + "</li>";
+                memberDisplay += " <li>Address:" + membersDir[i].address + "</li>";
+
+                memberItem.innerHTML = memberDisplay;
+
+                listElement.appendChild(memberItem);
+                console.log(memberDisplay);
+        }
+
+    </script>
+
+
+    
+</body>
+</html>

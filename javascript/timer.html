@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    
+    <form action="">
+        <input id="hours" type="text" placeholder="HH">
+        <input id="mins" type="text" placeholder="MM">
+        <input id="seconds" type="text" placeholder="SS">
+        <button onclick="startTimer()" id="run-button">Run</button>
+    </form>
+
+    <div>
+        <h2>Start:<span id="start-time"></span></h2>
+    </div>
+
+    <script>
+        function startTimer(){
+            event.preventDefault();
+
+            let hours = document.getElementById('hours').value;
+            let seconds = document.getElementById('seconds').value;
+            let mins = document.getElementById('mins').value;
+
+            document.getElementById("start-time").innerHTML = hours + ':' + mins + ':' + seconds;
+
+
+            const countdownInterval = setInterval(() => {
+                document.getElementById("start-time").innerHTML = hours + ':' + mins + ':' + seconds;
+
+                if((mins == 0) && (hours>0)){
+                    hours--;
+                    mins = 60;
+                }
+
+                if((seconds == 0) && (mins>0)){
+                    mins--;
+                    seconds = 60;
+                }
+
+                if(seconds == 0){
+                    clearInterval(countdownInterval);
+                    let endTime = new Date();
+                    document.getElementById("start-time").innerHTML = hours + ':' + mins + ':' + seconds;
+                }
+
+                seconds--;
+                
+            }, 1000);
+
+        }
+    </script>
+</body>
+</html>

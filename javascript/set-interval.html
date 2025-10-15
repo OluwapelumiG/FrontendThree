@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" placeholder="HH">
+        <input type="text" placeholder="MM">
+        <input id="seconds" type="text" placeholder="SS">
+    </form>
+
+    <div>
+        <h2>Start:<span id="start-time"></span></h2>
+        <h2>Current:<span id="current-time"></span></h2>
+        <h2>End:<span id="end-time"></span></h2>
+        <button onclick="runTimer()" id="run-button">Run</button>
+    </div>
+
+    <script>
+        function runTimer(){
+            let startTime = new Date();
+            document.getElementById("start-time").innerHTML = startTime.getMinutes() + ":" + startTime.getSeconds();
+
+            let count = 1;
+            let seconds = document.getElementById('seconds').value;
+
+            const countdown = setInterval(() => {
+                let currentTime = new Date();
+                document.getElementById('current-time').innerHTML =  currentTime.getMinutes() + ":" + currentTime.getSeconds();
+
+                if(count >= Number(seconds)){
+                    clearInterval(countdown);
+                    let endTime = new Date();
+                    document.getElementById('end-time').innerHTML =  endTime.getMinutes() + ":" + endTime.getSeconds();
+                }
+                count++;
+            }, 1000);
+        }
+    </script>
+
+
+
+
+// get hours input
+// get mins input
+// get secs input
+
+start interval with all
+
+// reduction in secs
+
+// reduction in minutes (if seconds has gotten to zero)
+// seconds goes back to 60
+
+
+// reduce your hours ( if mins has gotten to zero)
+// mins goes back to 60
+
+
+    
+</body>
+</html>

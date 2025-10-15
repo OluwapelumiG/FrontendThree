@@ -21,10 +21,11 @@
                 count++;
                 document.getElementById("interval").innerHTML = count;
 
-                if(count >= 20){
+                if(count >= 3){
                     clearInterval(timer);
-                    count = 0;
                 }
+
+                count++;
             }, 1000);
             
         }

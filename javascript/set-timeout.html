@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+</head>
+<body>
+
+    <div>
+        <h1>Start: <span id="start-time"></span></h1>
+        <h1>End: <span id="end-time"></span></h1>
+        <button onclick="runTimer()" id="run-button">Run</button>
+    </div>
+
+    <script>
+        function runTimer(){
+            let presentDate = new Date();
+            document.getElementById('start-time').innerHTML = presentDate.getMinutes() + ":" + presentDate.getSeconds();
+
+            setTimeout(function(){
+
+                let endDate = new Date();
+                document.getElementById('end-time').innerHTML = endDate.getMinutes() + ":" + endDate.getSeconds();
+            }, 1000);
+            
+        }
+    </script>
+    
+</body>
+</html>

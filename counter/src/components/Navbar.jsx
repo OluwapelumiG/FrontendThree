@@ -21,11 +21,11 @@ function Navbar(){
                     </div>
                     
                     <div className="text-2xl space-x-4">
-                        <a className="hover:text-blue-600 text-blue-600 ml-4">Home</a>
+                        <a href="/" className="hover:text-blue-600 text-blue-600 ml-4">Home</a>
                         /
-                        <a className="hover:text-blue-600 ml-4">Pages</a>
+                        <a href="/about" className="hover:text-blue-600 ml-4">About</a>
                         /
-                        <a className="hover:text-blue-600 ml-4">Solutions</a>
+                        <a href="/solutions" className="hover:text-blue-600 ml-4">Solutions</a>
                         /
                         <a className="hover:text-blue-600 ml-4">Case Studies</a>
                         /

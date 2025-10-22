@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+
 function Navbar(){
+
+    const [user, setUser ] = useState('');
+
+    useEffect(()=>{
+        setUser(localStorage.getItem('userEmail'));
+    }, [user]);
+
+    function logout(){
+        localStorage.removeItem('userEmail')
+        setUser('');
+        window.location.reload;
+    }
     return (
         <>
             <div className="w-full  h-10 bg-blue-800 ">
@@ -17,7 +31,8 @@ function Navbar(){
                 <div className="flex justify-between items-center pt-1 max-w-7xl mx-auto">
                     <div className="text-center">
                         <h1 className="text-5xl">Charles</h1>
-                        <p className="text-xs">BUSINESS CONSULTING</p>
+                        <p className="text-xs">{user}</p>
+                        
                     </div>
                     
                     <div className="text-2xl space-x-4">
@@ -31,7 +46,8 @@ function Navbar(){
                         /
                         <a className="hover:text-blue-600 ml-4">Shop</a>
                         /
-                        <a className="hover:text-blue-600 ml-4">Contact</a>
+                        <a href="/login" className="hover:text-blue-600 ml-4">Login</a>
+                        <button onClick={logout} className="hover:text-red-600 text-red-500 ml-4">Logout</button>
                     </div>
                 </div>
             </div>

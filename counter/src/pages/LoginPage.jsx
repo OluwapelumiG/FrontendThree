@@ -7,6 +7,7 @@ function LoginPage(){
     const [ password, setPassword ] = useState('');
     const [ emailError, setEmailError ] = useState('');
     const [ passwordError, setPasswordError ] = useState('');
+    
 
     function submitLogin(){
         if((email == '') || (password == '')){
